@@ -3,13 +3,21 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Loading from './components/loading'
+import store from './store/store'
+import axios from 'axios'
+// import VueAxios from 'vue-axios'
 
-Vue.config.productionTip = false
-
+import './assets/less/app.less'
+// Vue.use(VueAxios, axios)
+Vue.use(axios)
+Vue.use(Loading);
+Vue.prototype.axios = axios;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })
